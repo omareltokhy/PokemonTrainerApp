@@ -1,8 +1,9 @@
 <h2>Pokemons</h2>
-    <h4 *ngFor="let pokemon of pokemons" (click)="onPokemonClicked(pokemon)">
-        <img id="pokemon-image" src= "" alt="Pokemon-Image">
-        {{pokemon.name}}
-    </h4>
-<script>
-        document.getElementById("pokemon-image").src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png";
-</script>
+<div class= "box-container">
+    <div class="pokemon-box" *ngFor="let pokemon of pokemons" (click)="onPokemonClicked(pokemon)">
+        <img src= 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemons.indexOf(pokemon)+1}}.png' alt="Pokemon-Image">
+        <h4>{{pokemon.name}}</h4>
+        <img class="catched" id="catched" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/dream-world/poke-ball.png" alt="Catched">
+        <button>Catch</button>
+    </div>
+</div>

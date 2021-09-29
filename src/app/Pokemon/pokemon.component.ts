@@ -24,6 +24,11 @@ export class PokemonComponent implements OnInit{
         return this.pokemonService.getPokemons();
     }
 
+    //showImage(): void {
+      //  const pokemonImage: HTMLImageElement = document.getElementById('catched');
+        //pokemonImage.style.visibility = 'visible';
+    //}
+
     onPokemonClicked(pokemon: Pokemon):void{
         this.trainersPokemonsService.setPokemon(pokemon);
     }

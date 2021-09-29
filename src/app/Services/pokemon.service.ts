@@ -31,9 +31,10 @@ export class PokemonService{
         return this.error;
     }
 
-    public pokemonImagesArray(): void {
+    public pokemonImagesArray(): string[] {
         for(let pokemon of this.pokemons){
-
+            this.pokemonImages.push(`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.pokemons.indexOf(pokemon)+1}.png`);
         }
+        return this.pokemonImages;
     }
 }
