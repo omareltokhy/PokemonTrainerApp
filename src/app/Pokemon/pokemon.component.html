@@ -1,5 +1,8 @@
-<ul>
-    <li *ngFor="let pokemon of pokemons">
+<h2>Pokemons</h2>
+    <h4 *ngFor="let pokemon of pokemons" (click)="onPokemonClicked(pokemon)">
+        <img id="pokemon-image" src= "" alt="Pokemon-Image">
         {{pokemon.name}}
-    </li>
-</ul>
+    </h4>
+<script>
+        document.getElementById("pokemon-image").src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png";
+</script>

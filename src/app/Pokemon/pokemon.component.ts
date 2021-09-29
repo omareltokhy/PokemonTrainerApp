@@ -1,7 +1,8 @@
 import { Component } from "@angular/core";
-import { PokemonService } from "../Services/pokemon.service";
+import { PokemonService } from "../services/pokemon.service";
 import { OnInit } from "@angular/core";
-import { Pokemon } from "../Models/pokemon.model";
+import { Pokemon } from "../models/pokemon.model";
+import { TrainerPokemonService } from "../services/trainer-pokemons.service";
 
 @Component({
     selector: 'app-pokemon',
@@ -10,8 +11,9 @@ import { Pokemon } from "../Models/pokemon.model";
 })
 
 export class PokemonComponent implements OnInit{
-    constructor(private readonly pokemonService: PokemonService){
-
+    constructor(private readonly pokemonService: PokemonService,
+                private readonly trainersPokemonsService: TrainerPokemonService
+        ){
     }
 
     ngOnInit(): void {
@@ -20,5 +22,9 @@ export class PokemonComponent implements OnInit{
 
     get pokemons(): Pokemon[] {
         return this.pokemonService.getPokemons();
+    }
+
+    onPokemonClicked(pokemon: Pokemon):void{
+        this.trainersPokemonsService.setPokemon(pokemon);
     }
 }

@@ -1,4 +1,6 @@
 import { Component } from "@angular/core";
+import { Pokemon } from "../models/pokemon.model";
+import { TrainerPokemonService } from "../services/trainer-pokemons.service";
 
 @Component({
     selector: 'app-trainer',
@@ -8,4 +10,10 @@ import { Component } from "@angular/core";
 
 export class TrainerComponent{
     
+    constructor(private readonly trainersPokemonsService: TrainerPokemonService){
+    }
+
+    get trainersPokemon(): Pokemon | undefined {
+        return this.trainersPokemonsService.pokemon();
+    }
 }

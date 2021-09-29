@@ -3,9 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './Login/login.component';
-import { PokemonComponent } from './Pokemon/pokemon.component';
-import { TrainerComponent } from './Trainer/trainer.component';
+import { LoginComponent } from './login/login.component';
+import { PokemonComponent } from './pokemon/pokemon.component';
+import { TrainerComponent } from './trainer/trainer.component';
 
 @NgModule({
   declarations: [
