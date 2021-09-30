@@ -18,6 +18,11 @@ export class PokemonService{
         this.http.get('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151')
             .subscribe((response: any) => {
                 this.pokemons = response.results;
+                for(let i = 0; i < this.pokemons.length; i++) {
+                    this.pokemons[i].img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + (i+1) + '.png'
+                    this.pokemons[i].id = (i+1)
+                    console.log(this.pokemons)
+                }
             }, (error: HttpErrorResponse) => {
                 this.error = error.message;
             })
