@@ -9,6 +9,8 @@ import { Router } from "@angular/router"
 })
 
 export class LoginComponent{
+    username: string = "";
+
     constructor(
         private readonly router: Router,
         private readonly loginService: LoginService
@@ -20,7 +22,8 @@ export class LoginComponent{
 
 
             onLoginClick(): void {
-                this.loginService.authenticate("user", async () => {
+                console.log("you are: ", this.username)
+                this.loginService.authenticate(this.username, async () => {
 
                     await this.router.navigate(['pokemons'])
                 })
