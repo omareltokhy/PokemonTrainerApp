@@ -13,7 +13,7 @@ export class TrainerComponent{
     constructor(private readonly trainersPokemonsService: TrainerPokemonService){
     }
 
-    get trainersPokemon(): Pokemon | undefined {
-        return this.trainersPokemonsService.pokemon();
-    }
+    //get trainersPokemon(): Pokemon | undefined {
+      //  return this.trainersPokemonsService.pokemon();
+    //}
 }

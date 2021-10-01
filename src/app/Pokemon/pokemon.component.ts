@@ -30,6 +30,7 @@ export class PokemonComponent implements OnInit{
     //}
 
     onPokemonClicked(pokemon: Pokemon):void{
-        this.trainersPokemonsService.setPokemon(pokemon);
+
+        this.trainersPokemonsService.addPokemon(pokemon);
     }
 }

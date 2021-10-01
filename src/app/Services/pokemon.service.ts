@@ -9,7 +9,6 @@ import { Pokemon } from '../models/pokemon.model';
 export class PokemonService{
     private pokemons: Pokemon[] = [];
     private error: string = '';
-    private pokemonImages: string[] = [];
 
     constructor(private readonly http:HttpClient){
     }
@@ -34,12 +33,5 @@ export class PokemonService{
 
     public sendError(): string {
         return this.error;
-    }
-
-    public pokemonImagesArray(): string[] {
-        for(let pokemon of this.pokemons){
-            this.pokemonImages.push(`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.pokemons.indexOf(pokemon)+1}.png`);
-        }
-        return this.pokemonImages;
     }
 }
