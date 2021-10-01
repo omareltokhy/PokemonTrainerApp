@@ -4,6 +4,7 @@ import { LoginComponent } from "./login/login.component";
 import { PokemonComponent } from "./pokemon/pokemon.component";
 import { TestPage } from "./testpage/testpage.page";
 import { TrainerComponent } from "./trainer/trainer.component";
+import { AuthGuard } from "./services/auth.guard";
 
 
 const routes: Routes = [
@@ -22,11 +23,13 @@ const routes: Routes = [
     },
     {
         path: 'trainer',
-        component: TrainerComponent
+        component: TrainerComponent,
+        canActivate: [ AuthGuard ]
     },
     {
         path: 'pokemons',
-        component: PokemonComponent
+        component: PokemonComponent,
+        canActivate: [ AuthGuard ]
     }
 
 ];

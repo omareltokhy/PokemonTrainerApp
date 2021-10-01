@@ -9,6 +9,8 @@ import { TrainerComponent } from './trainer/trainer.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TestPage } from './testpage/testpage.page';
 
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,8 @@ import { TestPage } from './testpage/testpage.page';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
