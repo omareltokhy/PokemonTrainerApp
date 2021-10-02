@@ -5,6 +5,9 @@ import { Pokemon } from "../models/pokemon.model";
 import { TrainerPokemonService } from "../services/trainer-pokemons.service";
 import { Router } from "@angular/router"
 import { retry } from "rxjs/operators";
+import { User } from "../models/user.model";
+
+
 
 @Component({
     selector: 'app-pokemon',
@@ -20,14 +23,26 @@ export class PokemonComponent implements OnInit{
     }
 
     public pokemonArray: Pokemon[] = [];
+    private setup: number = 0;
 
     ngOnInit(): void {
-        this.pokemonService.fetchPokemons();
+        console.log("before:", this.setup)
+        if(this.setup === 0 ){
+            console.log("B", this.pokemonService.getData())
+            this.pokemonService.fetchPokemons();
+            this.setup = 1;
+            console.log("after:", this.setup)
+            console.log("C",this.pokemonService.getData())
+        }
+        this.pokemonService.getData();
+        
+        
     }
 
     get pokemons(): Pokemon[] {
         return this.pokemonService.getPokemons();
     }
+    
 
     //showImage(): void {
       //  const pokemonImage: HTMLImageElement = document.getElementById('catched');

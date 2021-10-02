@@ -6,7 +6,7 @@
     <div class="pokemon-box" *ngFor="let pokemon of pokemons">
         <img src={{pokemon.img}} alt="Pokemon-Image">
         <h4>{{pokemon.name}}</h4>
-        <img class="catched" id="catched" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/dream-world/poke-ball.png" alt="Catched">
+        <img *ngIf="pokemon.id===4" class="catched" id="catched" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/dream-world/poke-ball.png" alt="Catched">
         <button (click)="onPokemonClicked(pokemon)">Catch</button>
     </div>
 </div>
