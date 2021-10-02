@@ -42,7 +42,9 @@ export class PokemonComponent implements OnInit{
     get pokemons(): Pokemon[] {
         return this.pokemonService.getPokemons();
     }
-    
+    get trainersPokemons(): Pokemon[] {
+        return this.trainersPokemonsService.getTrainersPokemons();
+    }
 
     //showImage(): void {
       //  const pokemonImage: HTMLImageElement = document.getElementById('catched');
