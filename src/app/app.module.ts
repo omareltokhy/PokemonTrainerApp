@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { TestPage } from './testpage/testpage.page';
 
 import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     PokemonComponent,
     TrainerComponent,
-    TestPage
+    TestPage,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,16 @@
+.header{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.headerContainer{
+    text-align: center;
+}
+
+.headerText{
+    padding: 20px;
+    font-weight: 900;
+    color: yellow;
+    text-shadow: 2px 0 0 blue, -2px 0 0 blue, 0 2px 0 blue, 0 -2px 0 blue, 1px 1px blue, -1px -1px 0 blue, 1px -1px 0 blue, -1px 1px 0 blue;
+}

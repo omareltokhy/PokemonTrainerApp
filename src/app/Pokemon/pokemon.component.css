@@ -32,3 +32,14 @@ button{
     height: 15px;
     visibility: visible;
 }
+
+.headerContainer{
+    display: flex;
+    justify-content: center;
+    font-weight: 900;
+}
+
+.pageButton{
+    padding: 10px;
+    background-color: black;
+}

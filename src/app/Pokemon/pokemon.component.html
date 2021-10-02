@@ -1,4 +1,7 @@
-<h2>Pokemons</h2>
+<div class="headerContainer">
+    <h2>Pokemons</h2>
+    <button class="pageButton" (click)="onTrainerPageClicked()">To trainer page>>></button>
+</div>
 <div class= "box-container">
     <div class="pokemon-box" *ngFor="let pokemon of pokemons">
         <img src={{pokemon.img}} alt="Pokemon-Image">

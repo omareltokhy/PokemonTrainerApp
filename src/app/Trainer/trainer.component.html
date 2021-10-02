@@ -1,1 +1,13 @@
-<h2>Your Pokemons</h2>
+<div class="headerContainer">
+    <h2>Your Pokemons</h2>
+    <button (click)="onPokemonPageClicked()">Go to Pokemon page>>></button>
+</div>
+<div class= "box-container">
+    <div class="pokemon-box" *ngFor="let pokemon of trainersPokemons">
+        <img src={{pokemon.img}} alt="Pokemon-Image">
+        <h4>{{pokemon.name}}</h4>
+        <img class="catched" id="catched" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/dream-world/poke-ball.png" alt="Catched">
+        <button (click)="onPokemonDeleteClicked(trainersPokemons.indexOf(pokemon))">Transfer</button>
+    </div>
+</div>
+

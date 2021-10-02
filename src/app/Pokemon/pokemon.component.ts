@@ -3,6 +3,8 @@ import { PokemonService } from "../services/pokemon.service";
 import { OnInit } from "@angular/core";
 import { Pokemon } from "../models/pokemon.model";
 import { TrainerPokemonService } from "../services/trainer-pokemons.service";
+import { Router } from "@angular/router"
+import { retry } from "rxjs/operators";
 
 @Component({
     selector: 'app-pokemon',
@@ -12,9 +14,12 @@ import { TrainerPokemonService } from "../services/trainer-pokemons.service";
 
 export class PokemonComponent implements OnInit{
     constructor(private readonly pokemonService: PokemonService,
-                private readonly trainersPokemonsService: TrainerPokemonService
+                private readonly trainersPokemonsService: TrainerPokemonService,
+                private readonly router: Router,
         ){
     }
+
+    public pokemonArray: Pokemon[] = [];
 
     ngOnInit(): void {
         this.pokemonService.fetchPokemons();
@@ -30,7 +35,12 @@ export class PokemonComponent implements OnInit{
     //}
 
     onPokemonClicked(pokemon: Pokemon):void{
-
         this.trainersPokemonsService.addPokemon(pokemon);
+    }
+
+    onTrainerPageClicked():void{
+        //this.trainersPokemonsService.addPokemon(this.pokemonArray);
+
+        this.router.navigate(['trainer'])
     }
 }
