@@ -1,7 +1,9 @@
-
-    <h1>Welcome, Pokemon trainer!</h1>
-    <h3>Enter your trainer name</h3>
-    <input type="text" id="username" name="username" [(ngModel)]="username" >
-    <button (click)="onLoginClick()" [disabled]="attempting">Login</button>
-    <p *ngIf="attempting"> Trying to login...</p>
-
+<div class="box-container">
+    <div class="login-box">
+        <h1>Welcome, Pokemon trainer!</h1>
+        <h3>Enter your trainer name</h3>
+        <input type="text" id="username" name="username" [(ngModel)]="username" >
+        <button (click)="onLoginClick()" [disabled]="attempting">LOGIN</button>
+        <p *ngIf="attempting"> Trying to login...</p>
+    </div>
+</div>

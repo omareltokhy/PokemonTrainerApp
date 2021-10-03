@@ -35,11 +35,21 @@ button{
 
 .headerContainer{
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    text-align: center;
     font-weight: 900;
+    align-items: center;
 }
 
 .pageButton{
     padding: 10px;
     background-color: black;
+    max-width: 200px;
+}
+
+.headerText{
+    padding:10px;
+    color: yellow;
+    text-shadow: 2px 0 0 blue, -2px 0 0 blue, 0 2px 0 blue, 0 -2px 0 blue, 1px 1px blue, -1px -1px 0 blue, 1px -1px 0 blue, -1px 1px 0 blue;
 }

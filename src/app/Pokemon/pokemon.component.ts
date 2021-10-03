@@ -4,11 +4,8 @@ import { OnInit } from "@angular/core";
 import { Pokemon } from "../models/pokemon.model";
 import { TrainerPokemonService } from "../services/trainer-pokemons.service";
 import { Router } from "@angular/router"
-import { retry } from "rxjs/operators";
-import { User } from "../models/user.model";
 
-
-
+//Implementing pokemon component
 @Component({
     selector: 'app-pokemon',
     templateUrl: './pokemon.component.html',
@@ -25,6 +22,7 @@ export class PokemonComponent implements OnInit{
     public pokemonArray: Pokemon[] = [];
     private setup: number = 0;
 
+    //Fetches pokemon data from pokeapi once, and uses localstorage after that
     ngOnInit(): void {
         console.log("before:", this.setup)
         if(this.setup === 0 ){
@@ -46,18 +44,13 @@ export class PokemonComponent implements OnInit{
         return this.trainersPokemonsService.getTrainersPokemons();
     }
 
-    //showImage(): void {
-      //  const pokemonImage: HTMLImageElement = document.getElementById('catched');
-        //pokemonImage.style.visibility = 'visible';
-    //}
-
+    //Adds pokemon to trainers collection and updates trainer api
     onPokemonClicked(pokemon: Pokemon):void{
         this.trainersPokemonsService.addPokemon(pokemon);
     }
 
+    //Redirect user to trainer page 
     onTrainerPageClicked():void{
-        //this.trainersPokemonsService.addPokemon(this.pokemonArray);
-
         this.router.navigate(['trainer'])
     }
 }

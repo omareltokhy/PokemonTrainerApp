@@ -2,6 +2,7 @@ import { Component } from '@angular/core'
 import { LoginService } from "../services/login.service"
 import { Router } from "@angular/router"
 
+//Implementing loginComponent
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
@@ -16,6 +17,7 @@ export class LoginComponent{
         private readonly loginService: LoginService
     ) {
     }
+    //Return attempt to login and redirect to main page
             get attempting(): boolean {
                 return this.loginService.attempting;
             }

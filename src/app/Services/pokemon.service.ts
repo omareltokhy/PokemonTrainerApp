@@ -6,6 +6,7 @@ import { Pokemon } from '../models/pokemon.model';
     providedIn: 'root'
 })
 
+//Implement pokemon service
 export class PokemonService{
     private pokemons: Pokemon[] = [];
     private error: string = '';
@@ -13,6 +14,7 @@ export class PokemonService{
     constructor(private readonly http:HttpClient){
     }
 
+    //Get all pokemon names from pokeapi and add id and img to response
     public fetchPokemons(): void {
         this.http.get('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151')
             .subscribe((response: any) => {
@@ -38,6 +40,7 @@ export class PokemonService{
         return this.error;
     }
 
+    //Set pokemon data to session storage
     setData(pokemons: Pokemon[]) {
 
         const jsonData = JSON.stringify(pokemons)

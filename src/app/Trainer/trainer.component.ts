@@ -9,12 +9,11 @@ import { PokemonComponent } from "../pokemon/pokemon.component";
     templateUrl: './trainer.component.html',
     styleUrls: ['./trainer.component.css']
 })
-
+//Implements trainer component
 export class TrainerComponent implements OnInit{
     
     constructor(private readonly trainersPokemonsService: TrainerPokemonService,
                 private readonly router:Router,
-                //private readonly pokemonComponent: PokemonComponent
         ){
     }
 
@@ -26,19 +25,14 @@ export class TrainerComponent implements OnInit{
         return this.trainersPokemonsService.getTrainersPokemons();
     }
 
-    //get usersPokemons(): Pokemon[]{
-        //return this.pokemonComponent.pokemonArray;
-    //}
-
+    //Returns user back to pokemon page
     onPokemonPageClicked():void{
         this.router.navigate(['pokemons'])
     }
 
+    //Deletes users pokemon by id
     onPokemonDeleteClicked(pokemon: number){
         this.trainersPokemonsService.deleteTrainersPokemon(pokemon);
     };
 
-    //get trainersPokemon(): Pokemon | undefined {
-      //  return this.trainersPokemonsService.pokemon();
-    //}
 }

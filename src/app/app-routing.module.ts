@@ -6,7 +6,7 @@ import { TestPage } from "./testpage/testpage.page";
 import { TrainerComponent } from "./trainer/trainer.component";
 import { AuthGuard } from "./services/auth.guard";
 
-
+//Declare routing for pokemon app
 const routes: Routes = [
     {
         path: 'test',

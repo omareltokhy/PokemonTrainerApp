@@ -21,10 +21,12 @@ export class LoginService {
 	constructor(private readonly http: HttpClient, private sessionService: SessionService) {
 	}
 
+	//Get existing user
 	private findByUsername(username: string): Observable<User[]> {
 		return this.http.get<User[]>(`${ API_URL }/trainers?username=${ username }`)
 	}
 
+	//Create new user
 	private createUser(username: string): Observable<User> {
 		const headers = new HttpHeaders({
 			'x-api-key': environment.publicApiKey

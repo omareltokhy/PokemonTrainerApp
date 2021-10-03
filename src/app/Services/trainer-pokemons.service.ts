@@ -11,9 +11,9 @@ const API_URL = environment.apiBaseUrl
 @Injectable({
     providedIn : 'root'
 })
+//Implement service for trainers pokemons
 export class TrainerPokemonService{
 
-    //private trainer: User | null = null;
     public trainersPokemon: Pokemon[] = [];
     private error: string = '';
 
@@ -26,6 +26,7 @@ export class TrainerPokemonService{
         return this.sessionService.user
     }
 
+    //Adds pokemon info to user by id
     addPokemon(pokemon: Pokemon) {
 
         this.trainersPokemon.push(pokemon)
@@ -52,6 +53,7 @@ export class TrainerPokemonService{
                 });
         }
 
+        //Fetches trainers pokemon to display on trainer page
         public fetchTrainersPokemons(): void {
             this.http.get(`${ API_URL }/trainers/${this.sessionService.user?.id}`)
                 .subscribe((response: any) => {
@@ -70,6 +72,7 @@ export class TrainerPokemonService{
             return this.error;
         }
 
+        //Deletes trainers pokemon by pokemon id
         deleteTrainersPokemon(pokemon: number) {
  
             this.trainersPokemon.splice(pokemon, 1);
@@ -95,25 +98,4 @@ export class TrainerPokemonService{
                     console.log("The PATCH observable is now completed.");
                 });
             }
-
-    //public addPokemon(pokemon: Pokemon): void {
-	//	const headers = new HttpHeaders({
-	//		'x-api-key': environment.publicApiKey
-	//	})
-	//	this.http.patch(`${ API_URL }/trainers/${ this.user?.id }`, { pokemon }, { headers })
-	//}
-
-    //public addPokemonToTrainer(pokemon: Pokemon):void{
-      //  this.addPokemon(pokemon);
-    //}
-
-
-
-    //public setPokemon(trainersPokemon: Pokemon){
-      //  this.trainersPokemon = trainersPokemon;
-    //}
-
-    //public pokemon(): Pokemon | undefined {
-      //  return this.trainersPokemon;
-    //}
 }

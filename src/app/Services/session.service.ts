@@ -4,6 +4,7 @@ import { User } from "../models/user.model";
 @Injectable({
 	providedIn: 'root'
 })
+//Implement session service and set user info to localstorage
 export class SessionService {
 
 	private _user: User | undefined;
