@@ -1,0 +1,17 @@
+<div class="headerContainer">
+    <h2 class="headerText">Pokemon Catalogue</h2>
+    <button class="pageButton" (click)="onTrainerPageClicked()">To trainer page>>></button>
+</div>
+<div class= "box-container">
+    <div class="pokemon-box" *ngFor="let pokemon of pokemons">
+        <img src={{pokemon.img}} alt="Pokemon-Image">
+        <h4>{{pokemon.name}}</h4>
+        <div *ngFor="let trainersPokemon of trainersPokemons">
+        <img *ngIf="pokemon.id===trainersPokemon.id" class="catched" id="catched" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/dream-world/poke-ball.png" alt="Catched">
+        </div>
+        <button (click)="onPokemonClicked(pokemon)">Catch</button>
+    </div>
+</div>
+<div class="headerContainer">
+    <button class="pageButton" (click)="onTrainerPageClicked()">To trainer page>>></button>
+</div>

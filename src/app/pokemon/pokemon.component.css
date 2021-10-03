@@ -1,0 +1,55 @@
+.box-container{
+    display: grid;
+    grid-gap: 16px;
+    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(15%, 1fr));
+}
+
+.box-container .pokemon-box{
+    width: 100%;
+    height: 200px;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+    display: grid;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.box-container .pokemon-box img{
+    max-width: 70px;
+    display: block;
+    margin: 10px auto;
+}
+
+button{
+    background-color: #4C9A2A;
+    color: white;
+    margin: 10px;
+    border-radius: 25px;
+}
+
+.catched{
+    width: 15px;
+    height: 15px;
+    visibility: visible;
+}
+
+.headerContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-weight: 900;
+    align-items: center;
+}
+
+.pageButton{
+    padding: 10px;
+    background-color: black;
+    max-width: 200px;
+}
+
+.headerText{
+    padding:10px;
+    color: yellow;
+    text-shadow: 2px 0 0 blue, -2px 0 0 blue, 0 2px 0 blue, 0 -2px 0 blue, 1px 1px blue, -1px -1px 0 blue, 1px -1px 0 blue, -1px 1px 0 blue;
+}
