@@ -7,7 +7,6 @@ import { LoginComponent } from './login/login.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { TrainerComponent } from './trainer/trainer.component';
 import { AppRoutingModule } from './app-routing.module';
-import { TestPage } from './testpage/testpage.page';
 
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
@@ -18,7 +17,6 @@ import { HeaderComponent } from './header/header.component';
     LoginComponent,
     PokemonComponent,
     TrainerComponent,
-    TestPage,
     HeaderComponent
   ],
   imports: [
